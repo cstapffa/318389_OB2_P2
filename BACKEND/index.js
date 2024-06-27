@@ -38,7 +38,7 @@ app.get("/users", getUsuarios);
 app.post("/signup", postUsuario); /* registrar usuario */
 app.post("/login", loginUsuario); /* login usuario */
 // Middleware de USUARIOS
-//app.use(controlarSesion);
+app.use(controlarSesion);
 app.post("/logout", logoutUsuario); /* logout usuario */
 app.put("/user/:id", putUsuario); /* modificar usuario */
 
@@ -47,7 +47,10 @@ app.put("/user/:id", putUsuario); /* modificar usuario */
 // Products
 app.get("/products", getProductos); /* obtener  todos los productos */
 app.get("/product/:id", getProductoById); /* obtener pdtos por id */
-app.get("/product/type/:type", getProductoByType); /* obtener productos por categoría */
+app.get(
+  "/product/type/:type",
+  getProductoByType
+); /* obtener productos por categoría */
 app.post("/product", postProducto); /* agregar nuevo pdto */
 app.put("/product/:id", putProducto); /* modificar pdto */
 app.delete("/product/:id", deleteProducto); /* eliminar pdto */

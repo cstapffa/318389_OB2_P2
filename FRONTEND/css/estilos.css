@@ -1,0 +1,61 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 10px;
+}
+
+.contenedor {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.item-lista-mascota:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  max-width: 400px;
+}
+label {
+  font-weight: bold;
+  display: block;
+}
+
+.grupo-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+a,
+input[type="submit"] {
+  text-decoration: none;
+  color: black;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+}

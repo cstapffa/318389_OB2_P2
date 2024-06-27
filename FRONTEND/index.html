@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <a href="login.html" id="boton-logout">Logout</a>
+      <div>
+        <a href="nuevo-producto.html">nuevo producto</a>
+        <h3>Filtros</h3>
+        <div class="grupo-botones">
+          <div>
+            <label for="input-filtro-nombre">Nombre</label>
+            <input type="text" id="input-filtro-nombre" />
+          </div>
+          <div>
+            <label for="input-filtro-tipo">Categoría</label>
+            <select id="input-filtro-tipo">
+              <option value="">Todo</option>
+              <option value="f&v">Frutas & Verduras</option>
+              <option value="p&t">Panes & Tortas</option>
+              <option value="l&d">Lacteos & Derivados</option>
+              <option value="c&f">Carnes & Fiambres</option>
+              <option value="c&p">Cereales & Pastas</option>
+            </select>
+          </div>
+          <input type="button" id="boton-filtro" value="Filtrar" />
+        </div>
+        <br />
+      </div>
+      <div id="listado"></div>
+      <div id="lista-error" class="error"></div>
+    </div>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

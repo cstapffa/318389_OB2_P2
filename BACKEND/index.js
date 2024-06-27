@@ -15,6 +15,7 @@ import { getUsuarios } from "./controllers/getUsuarios.js";
 import { postUsuario } from "./controllers/postUsuario.js";
 import { loginUsuario } from "./controllers/loginUsuario.js";
 import { logoutUsuario } from "./controllers/logoutUsuario.js";
+import { putUsuario } from "./controllers/putUsuario.js";
 
 // const express = require('express');
 const app = express();
@@ -37,8 +38,9 @@ app.get("/users", getUsuarios);
 app.post("/signup", postUsuario); /* registrar usuario */
 app.post("/login", loginUsuario); /* login usuario */
 // Middleware de USUARIOS
-app.use(controlarSesion);
+//app.use(controlarSesion);
 app.post("/logout", logoutUsuario); /* logout usuario */
+app.put("/user/:id", putUsuario); /* modificar usuario */
 
 /* --- */
 

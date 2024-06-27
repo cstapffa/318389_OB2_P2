@@ -2,10 +2,11 @@ import { ModeloProducto } from "../database/Models/ModeloProducto.js";
 import { formatearFiltrosDB } from "../utils/functions.js";
 
 export const getProductos = (req, res, next) => {
+  
   const filtroNombre = formatearFiltrosDB(req.query.name);
   const filtroTipo = formatearFiltrosDB(req.query.type);
 
-  const filtros = { usuario: req.usuario.id };
+  const filtros = {};
   if (filtroNombre) filtros.name = filtroNombre;
   if (filtroTipo) filtros.type = filtroTipo;
 

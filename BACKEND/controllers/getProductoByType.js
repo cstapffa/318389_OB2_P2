@@ -1,12 +1,12 @@
 import { ModeloProducto } from "../database/Models/ModeloProducto.js";
 
 export const getProductoByType = (req, res, next) => {
-  const idProducto = req.params.type;
+  const typeProducto = req.params.type;
 
-  ModeloProducto.findOne({ type: typeProducto, usuario: req.usuario.id })
+  ModeloProducto.findOne({ type: typeProducto})  //, usuario: req.usuario.id //comento hasta tener id usuario logueado
     .then((data) => {
       if (!data) {
-        throw new Error(`No existe ningún producto con el Id ${idProducto}`);
+        throw new Error(`No existe ningún producto del Tipo ${typeProducto}`);
       } else {
         res.json(data);
       }

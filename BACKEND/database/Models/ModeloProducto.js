@@ -7,4 +7,4 @@ const schemaProducto = new Schema({
   usuario: String,
 });
 
-export const ModeloProducto = model("Producto", schemaProducto);
+export const ModeloProducto = model("Product", schemaProducto);

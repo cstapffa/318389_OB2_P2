@@ -2,6 +2,7 @@ import { ModeloUsuario } from "../database/Models/ModeloUsuario.js";
 
 export const loginUsuario = async (req, res, next) => {
   const { user, password } = req.body;
+  console.log("user ",user)
   const usuario = await ModeloUsuario.findOne({ user, password });
 
   if (usuario) {

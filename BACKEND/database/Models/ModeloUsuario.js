@@ -1,12 +1,17 @@
+import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
 
 const schemaUsuario = new Schema({
   id: { type: Number, unique: true },
-  name: String,
+  nombre: String,
+  apellido: String,
   user: { type: String, unique: true },
-  email: { type: String, unique: true },
   password: String,
   session: String,
 });
+
+if (mongoose.models.Usuario) {
+  delete mongoose.models.Usuario;
+}
 
 export const ModeloUsuario = model("Usuario", schemaUsuario);

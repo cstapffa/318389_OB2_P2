@@ -1,66 +1,54 @@
 import express from "express";
-import cors from "cors";
 import "dotenv/config";
+import cors from "cors";
 import { conectarDB } from "./database/conexion.js";
-import { getProductos } from "./controllers/getProductos.js";
-import { getProductoById } from "./controllers/getProductoById.js";
-import { getProductoByType } from "./controllers/getProductoByType.js";
-import { postProducto } from "./controllers/postProducto.js";
-import { putProducto } from "./controllers/putProducto.js";
-import { deleteProducto } from "./controllers/deleteProducto.js";
+import { getTareas } from "./controllers/getTareas.js";
+import { getTareaById } from "./controllers/getTareaById.js";
+import { getTareasByType } from "./controllers/getTareasByType.js";
+import { postTarea } from "./controllers/postTarea.js";
+import { putTarea } from "./controllers/putTarea.js";
+import { deleteTarea } from "./controllers/deleteTarea.js";
+import { controlarSesion } from "./middlewares/controlarSesion.js";
 import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
 import { manejadorErrores } from "./middlewares/manejadorErrores.js";
-import { controlarSesion } from "./middlewares/controlarSesion.js";
-import { getUsuarios } from "./controllers/getUsuarios.js";
 import { postUsuario } from "./controllers/postUsuario.js";
 import { loginUsuario } from "./controllers/loginUsuario.js";
 import { logoutUsuario } from "./controllers/logoutUsuario.js";
-import { putUsuario } from "./controllers/putUsuario.js";
 
-// const express = require('express');
 const app = express();
 const port = 8080;
 
 app.use(express.json());
 app.use(cors());
 
-await conectarDB(); /* espera a que se conecte la base de datos */
+await conectarDB();
 
-// Middleware de REQUESTS
+// Middleware => Mostrar Data
 app.use(mostrarDatosRequest);
 
 app.get("/", (req, res) => {
   res.send("To-Do API");
 });
 
-// Users
-app.get("/users", getUsuarios);
-app.post("/signup", postUsuario); /* registrar usuario */
-app.post("/login", loginUsuario); /* login usuario */
-// Middleware de USUARIOS
+// /* Usuarios */
+app.post("/registrar", postUsuario);
+app.post("/login", loginUsuario);
+// Middleware => Controlar Sesión
 app.use(controlarSesion);
-app.post("/logout", logoutUsuario); /* logout usuario */
-app.put("/user/:id", putUsuario); /* modificar usuario */
+app.post("/logout", logoutUsuario);
 
-/* --- */
+// /* Tareas */
+app.get("/tareas", getTareas); /* obtener todas las tareas */
+app.get("/tarea/:id", getTareaById); /* obtener tareas por id */
+app.get("/tareas/:type", getTareasByType); /* obtener tareas por tipo */
+app.post("/tarea", postTarea); /* agregar nueva tarea */
+app.put("/tarea/:id", putTarea); /* modificar tarea */
+app.delete("/tarea/:id", deleteTarea); /* eliminar tarea */
 
-// Products
-app.get("/products", getProductos); /* obtener  todos los productos */
-app.get("/product/:id", getProductoById); /* obtener pdtos por id */
-app.get(
-  "/product/type/:type",
-  getProductoByType
-); /* obtener productos por categoría */
-app.post("/product", postProducto); /* agregar nuevo pdto */
-app.put("/product/:id", putProducto); /* modificar pdto */
-app.delete("/product/:id", deleteProducto); /* eliminar pdto */
-
-/* --- */
-
-// Middleware de ERRORES
+// Middleware => Manejador de Errores
 app.use(manejadorErrores);
 
-// Srv levantado
+// Servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en el puerto ${port}`);
+  console.log(`Servidor corriendo en puerto ${port}`);
 });

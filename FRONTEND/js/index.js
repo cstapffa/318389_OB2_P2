@@ -1,4 +1,4 @@
-import Producto from "../Models/Producto.js";
+import Tarea from "../Models/Tarea.js";
 import { RequestsAPI } from "../RequestsAPI.js";
 import {
   imprimir,
@@ -10,21 +10,27 @@ import {
 validarSesion();
 eventoClickCerrarSesion();
 
-const mostrarListaProductos = (data) => {
+const mostrarListaTareas = (data) => {
   imprimir("lista-error", "");
-  const headerListado = "<tr><th>ID</th><th>Nombre</th><th>Categoría</th></tr>";
+  const headerListado =
+    "<tr><th>Icon</th><th>Nombre</th><th>Categoría</th></tr>";
 
-  const listadoProductos = data
-    .map((producto) =>
-      new Producto(producto.id, producto.nombre, producto.tipo).mostrarEnLista()
+  const listadoTareas = data
+    .map((tarea) =>
+      new Tarea(
+        /* tarea.id, */
+        tarea.icono,
+        tarea.nombre,
+        tarea.tipo
+      ).mostrarEnLista()
     )
     .join("");
 
-  imprimir("listado", `<table>${headerListado}${listadoProductos}</table>`);
+  imprimir("listado", `<table>${headerListado}${listadoTareas}</table>`);
 
-  document.querySelectorAll(".item-lista-producto").forEach((itemListado) => {
+  document.querySelectorAll(".item-lista-tarea").forEach((itemListado) => {
     itemListado.addEventListener("click", () => {
-      document.location.replace(`detalle-producto.html?id=${itemListado.id}`);
+      document.location.replace(`detalle-tarea.html?id=${itemListado.id}`);
     });
   });
 };
@@ -37,9 +43,9 @@ document.querySelector("#boton-filtro").addEventListener("click", () => {
   const filtroNombre = obtenerValorInput("input-filtro-nombre");
   const filtroTipo = obtenerValorInput("input-filtro-tipo");
 
-  RequestsAPI.getProductos({ filtroNombre, filtroTipo })
-    .then(mostrarListaProductos)
+  RequestsAPI.getTareas({ filtroNombre, filtroTipo })
+    .then(mostrarListaTareas)
     .catch(mostrarError);
 });
 
-RequestsAPI.getProductos().then(mostrarListaProductos).catch(mostrarError);
+RequestsAPI.getTareas().then(mostrarListaTareas).catch(mostrarError);

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>To-Do - Editar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <div class="contenedor">
+      <a href="index.html">Regresar</a>
+
+      <form>
+        <div>
+          <label for="editar-nombre">Nombre:</label>
+          <input type="text" id="editar-nombre" />
+        </div>
+        <div>
+          <label for="editar-tipo">Categoría:</label>
+          <input type="text" id="editar-tipo" />
+        </div>
+        <div>
+          <label for="editar-icono">Icon URL:</label>
+          <input type="text" id="editar-icono" />
+        </div>
+        <input type="button" id="boton-actualizar-tarea" value="Actualizar" />
+      </form>
+    </div>
+    <div id="editar-tarea-error" class="error"></div>
+
+    <!-- JS -->
+    <script src="js/editar-tarea.js" type="module"></script>
+  </body>
+</html>

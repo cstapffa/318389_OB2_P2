@@ -4,7 +4,7 @@ import cors from "cors";
 import { conectarDB } from "./database/conexion.js";
 import { getTareas } from "./controllers/getTareas.js";
 import { getTareaById } from "./controllers/getTareaById.js";
-import { getTareasByType } from "./controllers/getTareasByType.js";
+/* import { getTareasByType } from "./controllers/getTareasByType.js"; */
 import { postTarea } from "./controllers/postTarea.js";
 import { putTarea } from "./controllers/putTarea.js";
 import { deleteTarea } from "./controllers/deleteTarea.js";
@@ -13,6 +13,7 @@ import { mostrarDatosRequest } from "./middlewares/mostrarDatosRequest.js";
 import { manejadorErrores } from "./middlewares/manejadorErrores.js";
 import { postUsuario } from "./controllers/postUsuario.js";
 import { loginUsuario } from "./controllers/loginUsuario.js";
+import { getUsuario } from "./controllers/getUsuario.js";
 import { logoutUsuario } from "./controllers/logoutUsuario.js";
 
 const app = express();
@@ -35,12 +36,13 @@ app.post("/registrar", postUsuario);
 app.post("/login", loginUsuario);
 // Middleware => Controlar Sesión
 app.use(controlarSesion);
+app.get("/usuario", getUsuario);
 app.post("/logout", logoutUsuario);
 
 // /* Tareas */
 app.get("/tareas", getTareas); /* obtener todas las tareas */
 app.get("/tarea/:id", getTareaById); /* obtener tareas por id */
-app.get("/tareas/:type", getTareasByType); /* obtener tareas por tipo */
+/*app.get("/tareas/:type", getTareasByType);  obtener tareas por tipo */
 app.post("/tarea", postTarea); /* agregar nueva tarea */
 app.put("/tarea/:id", putTarea); /* modificar tarea */
 app.delete("/tarea/:id", deleteTarea); /* eliminar tarea */

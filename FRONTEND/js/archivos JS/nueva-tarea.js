@@ -1,18 +1,19 @@
-import { RequestsAPI } from "../RequestsAPI.js";
 import {
   imprimir,
   obtenerValorInput,
   validarSesion,
 } from "../utils/helpers.js";
+import { RequestsAPI } from "../RequestsAPI.js";
 
 validarSesion();
 
 document.querySelector("#boton-nueva-tarea").addEventListener("click", () => {
   const nombre = obtenerValorInput("nuevo-nombre");
   const tipo = obtenerValorInput("nuevo-tipo");
-  const icono = obtenerValorInput("nuevo-icono");
+  /*   const icono = obtenerValorInput("nuevo-icono"); */
+  const icono = "";
 
-  if (!nombre || !tipo || !icono) {
+  if (!nombre || !tipo /* || !icono */) {
     imprimir("nueva-tarea-error", "Por favor, complete todos los campos.");
     return;
   } else {

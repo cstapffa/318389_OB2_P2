@@ -5,7 +5,7 @@ const schemaTarea = new Schema({
   nombre: String,
   tipo: String,
   icono: String,
-  logueado: String,
+  usuario: String,
 });
 
 export const ModeloTarea = model("Tarea", schemaTarea);

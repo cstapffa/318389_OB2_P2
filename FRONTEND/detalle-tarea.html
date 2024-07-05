@@ -9,18 +9,32 @@
   </head>
 
   <body>
-    <div class="contenedor">
-      <a href="index.html">Regresar</a>
+    <header>
+      <div class="centrado">
+        <h1>To-Do Ist</h1>
+      </div>
+    </header>
 
-      <div id="detalle"></div>
+    <main class="centrado">
+      <form>
+        <h2>Tarea:</h2>
+        <div id="detalle"></div>
+        <div id="detalle-error" class="error"></div>
 
-      <input type="button" id="boton-editar-tarea" value="Editar" />
-      <input type="button" id="boton-eliminar-tarea" value="Eliminar" />
+        <div>
+          <input type="button" id="boton-editar-tarea" value="Editar" />
+          <input type="button" id="boton-eliminar-tarea" value="Eliminar" />
+        </div>
+      </form>
+    </main>
 
-      <div id="detalle-error" class="error"></div>
-    </div>
+    <footer>
+      <div>
+        <a href="index.html" class="btn-back">Regresar</a>
+      </div>
+    </footer>
 
     <!-- JS -->
-    <script src="js/detalle-tarea.js" type="module"></script>
+    <script src="js/archivos JS/detalle-tarea.js" type="module"></script>
   </body>
 </html>

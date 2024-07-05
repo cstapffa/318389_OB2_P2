@@ -1,9 +1,9 @@
-import { RequestsAPI } from "../RequestsAPI.js";
 import {
   obtenerValorInput,
   imprimir,
   validarSesion,
 } from "../utils/helpers.js";
+import { RequestsAPI } from "../RequestsAPI.js";
 
 validarSesion();
 

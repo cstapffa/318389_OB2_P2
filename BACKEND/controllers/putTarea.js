@@ -2,11 +2,12 @@ import { ModeloTarea } from "../database/Models/ModeloTarea.js";
 
 export const putTarea = (req, res, next) => {
   const idTarea = req.params.id;
-  const { nombre, tipo } = req.body;
-  
+  const { nombre, tipo, icono } = req.body;
+
   const datosNuevos = {};
   if (nombre) datosNuevos.nombre = nombre;
   if (tipo) datosNuevos.tipo = tipo;
+  if (icono) datosNuevos.icono = icono;
 
   ModeloTarea.updateOne({ id: idTarea }, datosNuevos)
     .then((data) => {

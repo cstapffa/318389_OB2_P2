@@ -9,28 +9,45 @@
   </head>
 
   <body>
-    <div class="contenedor">
-      <a href="index.html">Regresar</a>
+    <header>
+      <div class="centrado">
+        <h1>To-Do Ist</h1>
+      </div>
+    </header>
 
+    <main class="centrado">
       <form>
+        <h2>Editar Tarea</h2>
         <div>
           <label for="editar-nombre">Nombre:</label>
           <input type="text" id="editar-nombre" />
-        </div>
-        <div>
+
           <label for="editar-tipo">Categoría:</label>
-          <input type="text" id="editar-tipo" />
+          <select id="editar-tipo">
+            <option value="fitness">Fitness</option>
+            <option value="educacion">Educación</option>
+            <option value="hogar">Hogar</option>
+            <option value="limpieza">Limpieza</option>
+            <option value="cuidado">Cuidado Personal</option>
+            <option value="social">Social</option>
+          </select>
+
+<!--           <label for="editar-icono">Icono URL:</label>
+          <input type="text" id="nuevo-icono" /> -->
         </div>
-        <div>
-          <label for="editar-icono">Icon URL:</label>
-          <input type="text" id="editar-icono" />
-        </div>
+
+        <div id="editar-tarea-error" class="error"></div>
         <input type="button" id="boton-actualizar-tarea" value="Actualizar" />
       </form>
-    </div>
-    <div id="editar-tarea-error" class="error"></div>
+    </main>
+
+    <footer>
+      <div>
+        <a href="detalle-tarea.html" class="btn-back">Regresar</a>
+      </div>
+    </footer>
 
     <!-- JS -->
-    <script src="js/editar-tarea.js" type="module"></script>
+    <script src="js/archivos JS/editar-tarea.js" type="module"></script>
   </body>
 </html>

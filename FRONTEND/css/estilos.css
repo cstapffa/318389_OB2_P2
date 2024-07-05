@@ -74,7 +74,7 @@ a {
   margin-right: 20px;
   background-color: var(--cancel-darker);
   font-weight: 600;
-  padding: 3px 5px;
+  padding: 1px 5px;
 }
 
 .btn-back:hover {
@@ -99,6 +99,9 @@ header {
   padding: 3px;
   height: 7vh;
   width: 100%;
+
+  display: flex;
+  align-items: center;
 }
 
 main {
@@ -119,6 +122,9 @@ main {
 
 #info-perfil {
   margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 17px;
 }
 
 .aside input,
@@ -144,11 +150,12 @@ section .contenedor {
   gap: 20px;
 }
 
-article {
+.item-tarea {
   width: 125px;
   height: 125px;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+  background-color: var(--secondary);
   color: white;
 
   display: flex;
@@ -159,10 +166,14 @@ article {
   cursor: pointer;
 }
 
-article img {
+.item-tarea img {
   width: 50px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
+}
+
+.item-tarea h3 {
+  font-size: 16px;
 }
 
 footer {
@@ -229,4 +240,12 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#boton-eliminar-tarea {
+  background-color: var(--cancel-darker);
+}
+
+#boton-eliminar-tarea:hover {
+  background-color: var(--cancel);
 }

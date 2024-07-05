@@ -17,7 +17,7 @@ const mostrarError = (error) => {
 const popularCampos = (data) => {
   document.querySelector("#editar-nombre").value = data.nombre;
   document.querySelector("#editar-tipo").value = data.tipo;
-  document.querySelector("#editar-icono").value = data.icono;
+/*   document.querySelector("#editar-icono").value = data.icono; */
 };
 
 RequestsAPI.getTarea(idTarea)
@@ -31,14 +31,14 @@ document
   .addEventListener("click", () => {
     const nombre = obtenerValorInput("editar-nombre");
     const tipo = obtenerValorInput("editar-tipo");
-    const icono = obtenerValorInput("editar-icono");
+/*     const icono = obtenerValorInput("editar-icono"); */
 
-    if (!nombre || !tipo || !icono) {
+    if (!nombre || !tipo /* || !icono */) {
       imprimir("editar-icono-error", "Por favor complete todos los campos");
       return;
     }
 
-    RequestsAPI.putTarea(idTarea, nombre, tipo, icono)
+    RequestsAPI.putTarea(idTarea, nombre, tipo, /* icono */)
       .then(() => {
         document.location.replace(`detalle-tarea.html?id=${idTarea}`);
       })

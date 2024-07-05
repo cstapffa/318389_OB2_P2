@@ -59,6 +59,13 @@ export class RequestsAPI {
       .catch(manejarErrores);
   }
 
+  // get /usuarios 
+  static getUsuario() {
+    return fetch(obtenerUrl("usuario"), { headers })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+  
   // get /tareas
   static getTareas(opciones = {}) {
     const queryParams = new URLSearchParams({});

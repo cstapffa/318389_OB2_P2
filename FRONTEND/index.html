@@ -17,12 +17,16 @@
 
     <main>
       <div class="aside">
-        <div id="info-perfil"></div>
+        <div id="info-perfil">
+          <img
+            src="https://i.pinimg.com/736x/fa/fe/c8/fafec8012ee1d673f4af7d9beabf3448.jpg"
+            alt="To-Do Logo"
+          />
+          <h2 id="usuario-logueado"></h2>
+        </div>
 
         <div id="form-filtros">
-          <h3>Filtros</h3>
-
-          <label for="input-filtro-nombre">Nombre</label>
+          <label for="input-filtro-nombre">Filtrar tareas por nombre</label>
           <input type="text" id="input-filtro-nombre" />
 
           <label for="input-filtro-tipo">Categoría</label>
@@ -32,11 +36,11 @@
             <option value="educacion">Educación</option>
             <option value="hogar">Hogar</option>
             <option value="limpieza">Limpieza</option>
-            <option value="cuidado">Cuidado personal</option>
+            <option value="cuidado">Cuidado Personal</option>
             <option value="social">Social</option>
           </select>
 
-          <input type="button" id="boton-filtro" value="Filtrar" />
+          <!-- <input type="button" id="boton-filtro" value="Filtrar" /> -->
         </div>
 
         <a href="nueva-tarea.html">+</a>
@@ -46,58 +50,6 @@
         <div id="listado" class="contenedor"></div>
         <div id="lista-error" class="error"></div>
         <div id="listado-hechas" class="contenedor"></div>
-
-
-        <!-- <div class="contenedor">
-          <article class="fitness">
-            <img src="css/img/pesa.png" alt="alt" />
-            <h4>Fitness</h4>
-          </article>
-          <article class="educacion">
-            <img src="css/img/birrete.png" alt="alt" />
-            <h4>Educación</h4>
-          </article>
-          <article class="hogar">
-            <img src="css/img/casa-icono-silueta.png" alt="alt" />
-            <h4>Hogar</h4>
-          </article>
-          <article class="limpieza">
-            <img src="css/img/instrumentos.png" alt="alt" />
-            <h4>Limpieza</h4>
-          </article>
-          <article class="cuidado">
-            <img src="css/img/mascarilla.png" alt="alt" />
-            <h4>Cuidado</h4>
-          </article>
-          <article class="social">
-            <img src="css/img/cinco-altos.png" alt="alt" />
-            <h4>Social</h4>
-          </article>
-          <article class="fitness">
-            <img src="css/img/pesa.png" alt="alt" />
-            <h4>Fitness</h4>
-          </article>
-          <article class="educacion">
-            <img src="css/img/birrete.png" alt="alt" />
-            <h4>Educación</h4>
-          </article>
-          <article class="hogar">
-            <img src="css/img/casa-icono-silueta.png" alt="alt" />
-            <h4>Hogar</h4>
-          </article>
-          <article class="limpieza">
-            <img src="css/img/instrumentos.png" alt="alt" />
-            <h4>Limpieza</h4>
-          </article>
-          <article class="cuidado">
-            <img src="css/img/mascarilla.png" alt="alt" />
-            <h4>Cuidado</h4>
-          </article>
-          <article class="social">
-            <img src="css/img/cinco-altos.png" alt="alt" />
-            <h4>Social</h4>
-          </article>
-        </div> -->
       </section>
     </main>
 
@@ -108,6 +60,6 @@
     </footer>
 
     <!-- JS -->
-    <script src="js/index.js" type="module"></script>
+    <script src="js/archivos JS/index.js" type="module"></script>
   </body>
 </html>

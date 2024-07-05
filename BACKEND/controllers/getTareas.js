@@ -5,7 +5,8 @@ export const getTareas = (req, res, next) => {
   const filtroNombre = formatearFiltrosDB(req.query.nombre);
   const filtroTipo = formatearFiltrosDB(req.query.tipo);
 
-  const filtros = { logueado: req.usuario.id };
+  const filtros = { usuario: req.usuario.id };
+  
   if (filtroNombre) filtros.nombre = filtroNombre;
   if (filtroTipo) filtros.tipo = filtroTipo;
 
